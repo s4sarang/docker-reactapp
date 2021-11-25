@@ -1,5 +1,21 @@
 version: 2.1
+orbs:
+  docker: circleci/docker@1.7.0
 jobs:
-  -run: |
-      docker build -t reactapp -f Dockerfile.dev
-      docker run reactapp npm run test -- --coverage
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - docker/build:
+          tag: reactapp 
+          image: reactapp 
+          docker-context: . 
+          extra_build_args: -f 
+          path: . 
+          dockerfile: Dockerfile.dev 
+
+workflows:
+  example-workflow:
+    jobs:
+      - example-job
