@@ -1,5 +1,5 @@
 version: 2.1
-- run:
-    command: |
+jobs:
+  -run: |
       docker build -t reactapp -f Dockerfile.dev
       docker run reactapp npm run test -- --coverage
