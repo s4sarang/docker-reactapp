@@ -14,7 +14,7 @@ jobs:
           version: 19.03.13
       - run: docker run s4sarang/reactapp npm run test -- --coverage
       - aws-s3/sync:
-         from: bucket
+         from: .
          to: 's3://elasticbeanstalk-us-east-2-408677271841'
 
 workflows:
