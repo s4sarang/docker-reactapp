@@ -1,4 +1,8 @@
 version: 2.1
+orbs:
+  aws-cli: circleci/aws-cli@2.0
+  aws-s3: circleci/aws-s3@3.0
+  aws-elastic-beanstalk: circleci/aws-elastic-beanstalk@2.0.1
 machine:
   services: docker
 jobs:
@@ -9,8 +13,17 @@ jobs:
       - setup_remote_docker: 
           version: 19.03.13
       - run: docker run s4sarang/reactapp npm run test -- --coverage
+      - aws-s3/sync:
+         from: bucket
+         to: 's3://elasticbeanstalk-us-east-2-408677271841'
 
 workflows:
   example-workflow:
     jobs:
       - build
+      - aws-elastic-beanstalk/deploy:
+            environment-name: Dockerreactapp-env 
+            application-name: docker-react
+            filters:
+              branches:
+                only: main
