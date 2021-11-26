@@ -4,7 +4,7 @@ machine:
 jobs:
   build:
     docker:
-      - image: s4sarang/reactapp:latest
+      - image: cimg/base:stable
     steps:
       - setup_remote_docker: 
           version: 19.03.13
