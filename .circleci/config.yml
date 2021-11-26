@@ -4,8 +4,9 @@ jobs:
     docker:
       - image: s4sarang/reactapp:latest
     steps:
-      - setup_remote_docker: 19.03.13
-      - run: docker build s4sarang/reactapp 
+      - setup_remote_docker: 
+          version: 19.03.13
+      - run: docker run s4sarang/reactapp npm run test -- --coverage
 
 workflows:
   example-workflow:
