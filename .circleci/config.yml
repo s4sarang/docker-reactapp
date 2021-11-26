@@ -18,7 +18,8 @@ jobs:
           aws-region: AWS_DEFAULT_REGION 
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
           from: ./ 
-          to: s3://elasticbeanstalk-us-east-2-408677271841 
+          to: s3://elasticbeanstalk-us-east-2-408677271841
+      - aws-elastic-beanstalk/setup
 
 workflows:
   example-workflow:
