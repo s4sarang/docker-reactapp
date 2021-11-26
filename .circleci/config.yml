@@ -18,7 +18,7 @@ jobs:
           aws-region: AWS_DEFAULT_REGION 
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
           to: s3://elasticbeanstalk-us-east-2-408677271841 
-          from: bucket/Dockerfile 
+          from: Dockerfile 
 
 workflows:
   example-workflow:
