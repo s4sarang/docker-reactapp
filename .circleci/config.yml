@@ -11,7 +11,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - setup_remote_docker: 
-          version: 19.03.13
+          version: 19.03.13 
       - run: docker run s4sarang/reactapp npm run test -- --coverage
       - aws-s3/copy:
           aws-access-key-id: AWS_ACCESS_KEY_ID 
