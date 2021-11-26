@@ -1,5 +1,12 @@
 version: 2.1
 jobs:
-  -run: |
-      docker build -t reactapp -f Dockerfile.dev
-      docker run reactapp npm run test -- --coverage
+  build:
+    docker:
+      - image: s4sarang/reactapp:latest
+    steps:
+    - run: docker build s4sarang/reactapp 
+
+workflows:
+  example-workflow:
+    jobs:
+      - build
