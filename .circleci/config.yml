@@ -29,4 +29,4 @@ workflows:
             application-name: docker-reactapp
             filters:
               branches:
-                only: main
+                only: main 
