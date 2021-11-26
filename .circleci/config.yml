@@ -14,8 +14,11 @@ jobs:
           version: 19.03.13
       - run: docker run s4sarang/reactapp npm run test -- --coverage
       - aws-s3/sync:
-         from: .
-         to: 's3://elasticbeanstalk-us-east-2-408677271841'
+          to: s3://elasticbeanstalk-us-east-2-408677271841 
+          from: ./ 
+          aws-access-key-id: AWS_ACCESS_KEY_ID 
+          aws-region: AWS_DEFAULT_REGION 
+          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
 
 workflows:
   example-workflow:
