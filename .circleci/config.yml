@@ -1,12 +1,11 @@
 version: 2.1
-orbs:
-  docker: circleci/docker@1.7.0
 jobs:
   build:
     docker:
       - image: s4sarang/reactapp:latest
     steps:
-    - run: docker build s4sarang/reactapp 
+      - setup_remote_docker: 19.03.13
+      - run: docker build s4sarang/reactapp 
 
 workflows:
   example-workflow:
