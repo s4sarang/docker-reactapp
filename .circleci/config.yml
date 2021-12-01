@@ -24,8 +24,8 @@ workflows:
     jobs:
       - build
       - aws-elastic-beanstalk/deploy:
-            environment-name: Dockerreactapp-env 
-            application-name: docker-reactapp
+            environment-name: Dockerreactapp-env
+            application-name: Dockerreactapp-env
             filters:
               branches:
                 only: main 
