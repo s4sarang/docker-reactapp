@@ -19,7 +19,7 @@ jobs:
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
           arguments: --exclude "*.yml" 
           from: ./
-          to: s3://elasticbeanstalk-us-east-2-408677271841
+          to: s3://elasticbeanstalk-us-east-2-408677271841/docker-reactapp/
 
 workflows:
   example-workflow:
