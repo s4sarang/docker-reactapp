@@ -17,8 +17,8 @@ jobs:
           aws-access-key-id: AWS_ACCESS_KEY_ID 
           aws-region: AWS_DEFAULT_REGION 
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
-          from: . --exclude "docker-compose.yml"
-          to: s3://elasticbeanstalk-us-east-2-408677271841
+          from: .
+          to: s3://elasticbeanstalk-us-east-2-408677271841 --exclude "docker-compose.yml"
 
 workflows:
   example-workflow:
