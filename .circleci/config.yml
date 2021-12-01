@@ -12,8 +12,12 @@ jobs:
     steps:
       - setup_remote_docker: 
           version: 19.03.13 
-      - run: docker build -t reactapp-test -f Dockerfile.dev . \
-              docker run reactapp-test npm run test -- --coverage
+      - run: 
+          name: Building Reactapp Test Docker image
+          command: docker build -t reactapp-test -f Dockerfile.dev .
+      - run:
+          name: Running Reactapp Test Docker image
+          command: docker run reactapp-test npm run test -- --coverage
       - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID 
           aws-region: AWS_DEFAULT_REGION 
