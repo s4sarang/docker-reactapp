@@ -13,8 +13,7 @@ jobs:
       - setup_remote_docker: 
           version: 19.03.13 
       #- run: docker run s4sarang/reactapp npm run test -- --coverage
-      - aws-s3/copy:
-          arguments: --exclude "*.yml" 
+      - aws-s3/sync:
           aws-access-key-id: AWS_ACCESS_KEY_ID 
           aws-region: AWS_DEFAULT_REGION 
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY 
